@@ -28,7 +28,7 @@ create table concelho (
 
 create table instituicao (
     nome char(50) not null unique,
-    tipo char(20) not null check(tipo in ('farmacia', 'laboratorio', 'clinica', 'laboratorial')),
+    tipo char(20) not null check(tipo in ('farmacia', 'laboratorio', 'clinica', 'hospital')),
     num_concelho serial not null unique,
     num_regiao serial not null unique,
     foreign key(num_concelho, num_regiao) references concelho(num_concelho, num_regiao) on delete cascade,
