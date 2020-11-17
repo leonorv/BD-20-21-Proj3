@@ -3,8 +3,8 @@ select nome
 from concelho c natural join instituicao i natural join venda_farmacia v
 where v.data == current.date
 group by num_concelho
-having count(num_vendas) >= ALL
-    (select count(num_vendas)
+having sum(preco) >= ALL
+    (select sum(preco)
     from c natural join i natural join v
 	where v.data == current.date
     group by num_concelho
@@ -33,7 +33,7 @@ where not exists (
     select i.nome
     from venda_farmacia v_f natural join prescricao_venda p_v
     natural join i natural join concelho c
-    where m.num_cedula = p_v.num_cedula and v_f.substancia = 'Aspirina' and c.nome = 'Arouca'
+    where m.num_cedula = p_v.num_cedula and v_f.substancia = 'Aspirina' and c.nome = 'Arouca' and c.num_concelho = i.num_concelho
     and v_f.data_registo between '2020-01-01 00:00:00' and '2020-12-31 23:59:59'
     );
 
