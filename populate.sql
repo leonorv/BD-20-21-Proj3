@@ -337,28 +337,28 @@ insert into medico values(21, 'Valério Antas', 'psiquiatria');
 insert into medico values(22, 'Tairine Mora', 'psiquiatria');
 insert into medico values(23, 'Martinho Afonso', 'medicina geral e familiar');
 
-insert into consulta values(21, 1, '2020-08-22 15:11:18', 'Farmácia da Luz');
+insert into consulta values(21, 1, '2020-8-22 15:11:18', 'Farmácia da Luz');
 /* TESTAR O CHECK */
-insert into consulta values(11, 3,'2020-07-23 13:10:11', 'Clínica Rio Verde');
-insert into consulta values(11, 3,'2020-07-24 13:10:11', 'O Melhor Hospital que Existe');
-insert into consulta values(8, 1, '2019-05-31 17:30:00', 'Hospital de Santa Maria')
-insert into consulta values(4, 2, '2020-09-03 12:06:05', 'Hospital Carérrimo');
+insert into consulta values(11, 3,'2020-7-23 13:10:11', 'Clínica Rio Verde');
+insert into consulta values(11, 3,'2020-7-24 13:10:11', 'O Melhor Hospital que Existe');
+insert into consulta values(8, 1, '2019-5-31 17:30:00', 'Hospital de Santa Maria')
+insert into consulta values(4, 2, '2020-9-3 12:06:05', 'Hospital Carérrimo');
 insert into consulta values(19, 5, '2020-10-30 14:15:00', 'SAMS');
 
 insert into prescricao values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 10);
-insert into prescricao values(4, 2, '2020-09-03 12:06:05', 'xanax', 20);
+insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'xanax', 20);
 
-insert into analise(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019-05-31 18:00:25', 'Laboratório Razoável', 'Glicémia', 15);
-insert into analise(2, 'cardiologia', 11, 3, '2020-07-24 13:10:11', '2020-09-25 15:30:00', 'Isto Sim É Um Laboratório', 'Leucócitos', 50);
-insert into analise(3, 'neurologia', 4, 2, '2020-09-03 12:06:05', '2020-09-10 08:00:00', 'Laboratório de São João', 'Leucócitos', 50);
+insert into analise(1, 'oftalmologia', 8, 1, '2019-5-31 17:30:00', '2019-05-31 18:00:25', 'Laboratório Razoável', 'Glicémia', 15);
+insert into analise(2, 'cardiologia', 11, 3, '2020-7-24 13:10:11', '2020-09-25 15:30:00', 'Isto Sim É Um Laboratório', 'Leucócitos', 50);
+insert into analise(3, 'neurologia', 4, 2, '2020-9-3 12:06:05', '2020-09-10 08:00:00', 'Laboratório de São João', 'Leucócitos', 50);
 
 insert into venda_farmacia values(1, '2020-11-18 12:06:05', 'brufen', '200', 15, 'Casa Farmacêutica');
 insert into venda_farmacia values(2, '2020-11-18 10:00:01', 'ben-u-ron', '600', 40, 'Farmácia Decadente');
 insert into venda_farmacia values(3, '2020-11-18 08:50:00', 'xanax', '600', 25, 'Farmácia Extremamente Decadente');
 insert into venda_farmacia values(4, '2020-11-18 15:40:00', 'paracetamol', '400', 20, 'Farmácia de Jesus');
 
-insert into prescricao_venda(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
-insert into prescricao_venda(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
+insert into prescricao_venda(11, 3, '2020-7-24 13:10:11', 'paracetamol', 4);
+insert into prescricao_venda(4, 2, '2020-9-3 12:06:05', 'xanax', 5);
 
 
 
