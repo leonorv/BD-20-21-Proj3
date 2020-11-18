@@ -1,14 +1,14 @@
 /*timestamp format: 2018-9-20 23:59:59*/
-drop table regiao cascade;
-drop table concelho cascade;
-drop table instituicao cascade;
-drop table medico cascade;
-drop table consulta cascade;
-drop table prescricao cascade;
-drop table analise cascade;
-drop table venda_farmacia cascade;
-drop table instituicao cascade;
-drop table prescricao_venda cascade;
+drop table if exists regiao cascade;
+drop table if exists concelho cascade;
+drop table if exists instituicao cascade;
+drop table if exists medico cascade;
+drop table if exists consulta cascade;
+drop table if exists prescricao cascade;
+drop table if exists analise cascade;
+drop table if exists venda_farmacia cascade;
+drop table if exists instituicao cascade;
+drop table if exists prescricao_venda cascade;
 
 create table regiao (
     num_regiao serial not null,
@@ -45,7 +45,7 @@ create table medico (
 create table consulta (
     num_cedula serial not null,
     num_doente serial not null,
-    dia_hora timestamp not null check(weekday(cast(dia_hora as date)) not in (5, 6)),
+    dia_hora timestamp not null check(extract(dow from dia_hora) not in (5, 6)),
     nome_instituicao char(50) not null,
     foreign key(num_cedula) references medico(num_cedula) on delete cascade,
     foreign key(nome_instituicao) references instituicao(nome) on delete cascade,
@@ -63,21 +63,6 @@ create table prescricao (
     primary key(num_cedula, num_doente, dia_hora, substancia​)
 );
 
-create table analise (​
-    ​num_analise​ serial not null,
-    especialidade char(50) not null, 
-    num_cedula serial not null, 
-    num_doente serial not null, 
-    dia_hora timestamp, 
-    data_registo timestamp not null, 
-    nome char(50) not null, 
-    quant integer not null, 
-    inst char(50) not null,
-    foreign key(num_cedula, num_doente, dia_hora) references consulta(num_cedula, num_doente, dia_hora) on delete cascade,
-    foreign key(inst) references instituicao(nome) on delete cascade,
-    primary key(num_analise),
-    constraint RI_analise check((num_cedula null and num_doente null and dia_hora null) or check(consulta.especialidade == especialidade))
-);
 
 create table venda_farmacia (
     num_venda serial not null, 
@@ -99,4 +84,21 @@ create table prescricao_venda (
     foreign key(num_venda) references venda_farmacia(num_venda),
     foreign key(num_cedula, num_doente, dia_hora, substancia) references prescricao(num_cedula, num_doente, dia_hora, substancia),
     primary key(num_cedula, num_doente, dia_hora, substancia, num_venda) 
+);
+
+create table analise (​
+    ​num_analise​ serial not null,
+    especialidade char(50) not null, 
+    num_cedula serial not null, 
+    num_doente serial not null, 
+    dia_hora timestamp, 
+    data_registo timestamp not null, 
+    nome char(50) not null, 
+    quant integer not null, 
+    inst char(50) not null,
+    foreign key(num_cedula, num_doente, dia_hora) references consulta(num_cedula, num_doente, dia_hora) on delete cascade,
+    foreign key(inst) references instituicao(nome) on delete cascade,
+    primary key(num_analise)
+    /*constraint RI_analise check((num_cedula null and num_doente null and dia_hora null) or check(consulta.especialidade == especialidade))*/
+    /*constraint RI_analise check((num_cedula null and num_doente null and dia_hora null)*/
 );
