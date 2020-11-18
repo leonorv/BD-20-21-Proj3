@@ -282,36 +282,36 @@ insert into concelho values(275, 1, 'Viseu', 99274);
 insert into concelho values(276, 1, 'Vizela',	23736);
 insert into concelho values(277, 1, 'Vouzela', 10564);
 
-insert into instituicao values('Casa Farmacêutica', 'farmacia', 1, 1);
-insert into instituicao values('Farmácia Nova Iorque', 'farmacia', 1, 1);
-insert into instituicao values('Farmácia da Luz', 'farmacia', 1, 25);
-insert into instituicao values('Farmácia Decadente', 'farmacia', 1, 30);
-insert into instituicao values('Farmácia Extremamente Decadente', 'farmacia', 1, 45);
-insert into instituicao values('Farmácia de Jesus', 'farmacia', 1, 45);
+insert into instituicao values('Casa Farmacêutica', 'farmacia', 32, 2); /*arouca*/
+insert into instituicao values('Farmácia Nova Iorque', 'farmacia', 32, 2); /*arouca*/
+insert into instituicao values('Farmácia da Luz', 'farmacia', 12, 2);
+insert into instituicao values('Farmácia Decadente', 'farmacia', 55, 4);
+insert into instituicao values('Farmácia Extremamente Decadente', 'farmacia', 100, 2);
+insert into instituicao values('Farmácia de Jesus', 'farmacia', 45, 4);
 
-insert into instituicao values('Laboratório de Santa Maria', 'laboratorio', 2, 150);
-insert into instituicao values('Laboratório de São João', 'laboratorio', 2, 150);
-insert into instituicao values('Centro Laboratorial da Cruz', 'laboratorio', 2, 3);
-insert into instituicao values('Centro Laboratorial de Santa Maria', 'laboratorio', 2, 3);
-insert into instituicao values('Isto Sim É Um Laboratório', 'laboratorio', 2, 4);
-insert into instituicao values('Laboratório Razoável', 'laboratorio', 2, 54);
+insert into instituicao values('Laboratório de Santa Maria', 'laboratorio', 66, 4);
+insert into instituicao values('Laboratório de São João', 'laboratorio', 14, 3);
+insert into instituicao values('Centro Laboratorial da Cruz', 'laboratorio', 88, 4);
+insert into instituicao values('Centro Laboratorial de Santa Maria', 'laboratorio', 88, 4);
+insert into instituicao values('Isto Sim É Um Laboratório', 'laboratorio', 15, 4);
+insert into instituicao values('Laboratório Razoável', 'laboratorio', 77, 5);
 
-insert into instituicao values('Clínica Rio Verde', 'clinica', 3, 3);
-insert into instituicao values('Clínica Muito Barata', 'clinica', 3, 3);
-insert into instituicao values('Clínica Bonita', 'clinica', 3, 3);
-insert into instituicao values('Clínica Rio Azul', 'clinica', 3, 3);
-insert into instituicao values('Clínica de Preço Razoável', 'clinica', 3, 3);
-insert into instituicao values('Clínica da Cooperativa', 'clinica', 3, 3);
+insert into instituicao values('Clínica Rio Verde', 'clinica', 203, 1);
+insert into instituicao values('Clínica Muito Barata', 'clinica', 204, 1);
+insert into instituicao values('Clínica Bonita', 'clinica', 205, 1);
+insert into instituicao values('Clínica Rio Azul', 'clinica', 101, 2);
+insert into instituicao values('Clínica de Preço Razoável', 'clinica', 102, 2);
+insert into instituicao values('Clínica da Cooperativa', 'clinica', 103, 2);
 
-insert into instituicao values('SAMS', 'hospital', 4, 7);
-insert into instituicao values('Hospital Extremamente Caro', 'hospital', 4, 7);
-insert into instituicao values('Hospital Ainda Mais Caro', 'hospital', 4, 7);
-insert into instituicao values('Hospital Carérrimo', 'hospital', 4, 7);
-insert into instituicao values('O Melhor Hospital que Existe', 'hospital', 4, 7);
-insert into instituicao values('Centro Hospitalar Azul', 'hospital', 4, 7);
-insert into instituicao values('Centro Hospitalar São Sebastião', 'hospital', 4, 7);
-insert into instituicao values('Maternidade Alfredo da Costa', 'hospital', 4, 7);
-insert into instituicao values('Hospital Incrível', 'hospital', 4, 7);
+insert into instituicao values('SAMS', 'hospital', 161, 3);
+insert into instituicao values('Hospital Extremamente Caro', 'hospital', 162, 3);
+insert into instituicao values('Hospital Ainda Mais Caro', 'hospital', 163, 3);
+insert into instituicao values('Hospital Carérrimo', 'hospital', 18, 5);
+insert into instituicao values('O Melhor Hospital que Existe', 'hospital', 17, 5);
+insert into instituicao values('Centro Hospitalar Azul', 'hospital', 71, 5);
+insert into instituicao values('Centro Hospitalar São Sebastião', 'hospital', 222, 1);
+insert into instituicao values('Maternidade Alfredo da Costa', 'hospital', 20, 3);
+insert into instituicao values('Hospital Incrível', 'hospital', 154, 3);
 
 insert into medico values(1, 'Sancha Barroso', 'fisioterapia');
 insert into medico values(2,'Balduíno Milheirão', 'fisioterapia');
@@ -337,28 +337,42 @@ insert into medico values(21, 'Valério Antas', 'psiquiatria');
 insert into medico values(22, 'Tairine Mora', 'psiquiatria');
 insert into medico values(23, 'Martinho Afonso', 'medicina geral e familiar');
 
-insert into consulta values(21, 1, '2020-8-22 15:11:18', 'Farmácia da Luz');
+insert into consulta values(21, 1, '2020-08-22 15:11:18', 'Farmácia da Luz');
 /* TESTAR O CHECK */
-insert into consulta values(11, 3,'2020-7-23 13:10:11', 'Clínica Rio Verde');
-insert into consulta values(11, 3,'2020-7-24 13:10:11', 'O Melhor Hospital que Existe');
-insert into consulta values(8, 1, '2019-5-31 17:30:00', 'Hospital de Santa Maria')
-insert into consulta values(4, 2, '2020-9-3 12:06:05', 'Hospital Carérrimo');
+insert into consulta values(11, 3,'2020-07-23 13:10:11', 'Clínica Rio Verde');
+insert into consulta values(11, 3,'2020-07-24 13:10:11', 'O Melhor Hospital que Existe');
+insert into consulta values(8, 1, '2019-05-31 17:30:00', 'Hospital de Santa Maria')
+insert into consulta values(4, 2, '2020-09-03 12:06:05', 'Hospital Carérrimo');
 insert into consulta values(19, 5, '2020-10-30 14:15:00', 'SAMS');
 
-insert into prescricao values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 10);
-insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'xanax', 20);
+/*num_cedula, num_doente, dia_hora, substancia*/
+insert into prescricao values(11, 3, '2019-07-24 13:10:11', 'paracetamol');
+insert into prescricao values(12, 2, '2019-04-03 12:06:05', 'xanax');
+insert into prescricao values(11, 3, '2020-07-24 13:10:11', 'paracetamol');
+insert into prescricao values(12, 2, '2019-02-03 12:06:05', 'aspirina');
+insert into prescricao values(12, 3, '2019-07-24 13:10:11', 'aspirina');
+insert into prescricao values(4, 2, '2020-09-03 12:06:05', 'xanax');
+insert into prescricao values(11, 3, '2019-07-24 13:10:11', 'brufen');
+insert into prescricao values(4, 2, '2019-12-22 11:43:05', 'aspirina');
 
-insert into analise(1, 'oftalmologia', 8, 1, '2019-5-31 17:30:00', '2019-05-31 18:00:25', 'Laboratório Razoável', 'Glicémia', 15);
-insert into analise(2, 'cardiologia', 11, 3, '2020-7-24 13:10:11', '2020-09-25 15:30:00', 'Isto Sim É Um Laboratório', 'Leucócitos', 50);
-insert into analise(3, 'neurologia', 4, 2, '2020-9-3 12:06:05', '2020-09-10 08:00:00', 'Laboratório de São João', 'Leucócitos', 50);
+/*num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst*/
+insert into analise(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019-05-31 18:00:25', 'Laboratório Razoável', 'Glicémia', 15);
+insert into analise(2, 'cardiologia', 11, 3, '2020-07-24 13:10:11', '2020-09-25 15:30:00', 'Isto Sim É Um Laboratório', 'Leucócitos', 50);
+insert into analise(3, 'neurologia', 4, 2, '2020-09-03 12:06:05', '2020-09-10 08:00:00', 'Laboratório de São João', 'Leucócitos', 50);
 
-insert into venda_farmacia values(1, '2020-11-18 12:06:05', 'brufen', '200', 15, 'Casa Farmacêutica');
+
+/*num_venda, inst, data_registo, substancia, quant, preco*/
+insert into venda_farmacia values(1, '2020-11-18 12:06:05', 'brufen', '200', 15, 'Casa Farmacêutica'); /*em arouca*/
+insert into venda_farmacia values(1, '2019-12-22 11:43:05', 'aspirina', '200', 15, 'Farmácia Nova Iorque'); /*em arouca*/
 insert into venda_farmacia values(2, '2020-11-18 10:00:01', 'ben-u-ron', '600', 40, 'Farmácia Decadente');
 insert into venda_farmacia values(3, '2020-11-18 08:50:00', 'xanax', '600', 25, 'Farmácia Extremamente Decadente');
 insert into venda_farmacia values(4, '2020-11-18 15:40:00', 'paracetamol', '400', 20, 'Farmácia de Jesus');
 
-insert into prescricao_venda(11, 3, '2020-7-24 13:10:11', 'paracetamol', 4);
-insert into prescricao_venda(4, 2, '2020-9-3 12:06:05', 'xanax', 5);
+/*num_cedula, num_doente, data, subs, num_venda*/
+insert into prescricao_venda values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
+insert into prescricao_venda values(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
+insert into prescricao_venda values(11, 3, '2020-07-24 13:10:11', 'brufen', 1); /*em arouca*/
+insert into prescricao_venda values(4, 2, '2019-12-22 11:43:05', 'aspirina', 2); /*em arouca*/
 
 
 
