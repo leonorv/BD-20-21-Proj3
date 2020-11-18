@@ -344,33 +344,36 @@ insert into consulta values(8, 1, '2019-5-31 17:30:00', 'SAMS');
 insert into consulta values(4, 2, '2020-9-3 12:06:05', 'Hospital Carérrimo');
 insert into consulta values(19, 5, '2020-10-30 14:15:00', 'SAMS');
 
-/*num_cedula, num_doente, dia_hora, substancia*/
+insert into consulta values(5, 5, '2019-01-01 10:15:00', 'Hospital Carérrimo');
+insert into consulta values(5, 4, '2020-11-03 12:06:05', 'Laboratório de São João');
+
+
+/*num_cedula, num_doente, dia_hora, substancia, quant*/
 insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'paracetamol',400);
 insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'xanax',600);
 insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'aspirina',2);
 insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'brufen',200);
 insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'aspirina',9);
 
+insert into prescricao values(8, 1, '2019-5-31 17:30:00', 'brufen', 10);
+insert into prescricao values(5, 5, '2019-01-01 10:15:00', 'valium', 60);
+
 /*num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst*/
 insert into analise values(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019-05-31 18:00:25', 'Glicémia', 15,'Laboratório Razoável');
 insert into analise values(2, 'cardiologia', 11, 3, '2020-07-24 13:10:11', '2020-09-25 15:30:00', 'Leucócitos', 50, 'Isto Sim É Um Laboratório');
 insert into analise values(3, 'neurologia', 4, 2, '2020-09-03 12:06:05', '2020-09-10 08:00:00', 'Leucócitos', 50,'Laboratório de São João');
-
+insert into analise values(4, 'urologia', 5, 4, '2020-11-03 12:06:05', '2020-11-10 08:00:00', 'Leucócitos', 50,'Laboratório de São João');
 
 /*num_venda, inst, data_registo, substancia, quant, preco*/
-insert into vendaFarmacia values(1, 'Casa Farmacêutica', '2020-11-18 12:06:05','brufen',200,15); /*em arouca*/
-insert into vendaFarmacia values(2, 'Farmácia Nova Iorque', '2019-12-22 11:43:05','aspirina',200,15); /*em arouca*/
+insert into vendaFarmacia values(1, 'Casa Farmacêutica', '2020-07-24 13:10:11','aspirina',200,15); /*em arouca*/
+insert into vendaFarmacia values(2, 'Farmácia Nova Iorque', '2020-9-3 12:06:05','aspirina',200,15); /*em arouca*/
 insert into vendaFarmacia values(3, 'Farmácia Decadente','2020-11-18 10:00:01','ben-u-ron',600,40);
 insert into vendaFarmacia values(4, 'Farmácia Extremamente Decadente','2020-11-18 08:50:00', 'xanax',600,25);
 insert into vendaFarmacia values(5, 'Farmácia de Jesus','2020-11-18 15:40:00', 'paracetamol',400,20);
+insert into vendaFarmacia values(6, 'Farmácia de Jesus', '2020-11-18 12:06:05','brufen',200,25); /*em belmonte*/
 
 /*num_cedula, num_doente, data, subs, num_venda*/
 insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
 insert into prescricaoVenda values(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
-insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'brufen', 1); /*em arouca*/
+insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'aspirina', 1); /*em arouca*/
 insert into prescricaoVenda values(4, 2, '2020-9-3 12:06:05', 'aspirina', 2); /*em arouca*/
-
-
-
-
-

@@ -74,14 +74,14 @@ create table Analise(
     inst char(50) not null,
     foreign key(num_cedula, num_doente, dia_hora) references Consulta(num_cedula, num_doente, dia_hora),
     foreign key(inst) references Instituicao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    primary key(num_analise),
-    constraint RI_analise check(num_cedula = null and num_doente = null and dia_hora = null)
+    primary key(num_analise)
+    /*constraint RI_analise check(num_cedula = null and num_doente = null and dia_hora = null)*/
 );
 
 
 create table VendaFarmacia(
     num_venda serial not null unique, 
-    inst char(50) not null unique,
+    inst char(50) not null,
     data_registo timestamp not null, 
     substancia char(50) not null,
     quant integer not null,
