@@ -14,14 +14,14 @@ insert into concelho values(7, 4, 'Alcácer do Sal', 11712);
 insert into concelho values(8, 3, 'Alcanena', 12860); 	
 insert into concelho values(9, 4, 'Alcobaça',  53641); 	
 insert into concelho values(10, 2, 'Alcochete', 244);
-insert into concelho values(11, 2, 'Alenquer' 43596);
-insert into concelho values(12, 2, 'Alfândega da Fé' 4568);
-insert into concelho values(13, 2, 'Alijó' 10703);
-insert into concelho values(14, 3, 'Aljezur' 5599);	
-insert into concelho values(15, 4, 'Aljustrel' 8285);	
-insert into concelho values(16, 3, 'Almada' 168987);
+insert into concelho values(11, 2, 'Alenquer', 43596);
+insert into concelho values(12, 2, 'Alfândega da Fé', 4568);
+insert into concelho values(13, 2, 'Alijó', 10703);
+insert into concelho values(14, 3, 'Aljezur', 5599);	
+insert into concelho values(15, 4, 'Aljustrel', 8285);	
+insert into concelho values(16, 3, 'Almada', 168987);
 insert into concelho values(17, 5, 'Almeida', 5926); 	
-insert into concelho values(18, 5, 'Almeirim', 22 569);
+insert into concelho values(18, 5, 'Almeirim', 22569);
 insert into concelho values(19, 4, 'Almodôvar', 6746);
 insert into concelho values(20, 3, 'Alpiarça', 7087); 	
 insert into concelho values(21, 2, 'Alter do Chão', 319);
@@ -31,8 +31,8 @@ insert into concelho values(24, 3, 'Amadora', 181724);
 insert into concelho values(25, 1, 'Amarante', 56264);
 insert into concelho values(26, 1, 'Amares', 18889);
 insert into concelho values(27, 1, 'Anadia', 29150);
-insert into concelho values(28, 2, 'Ansião'	13 128);
-insert into concelho values(39, 2, 'Arcos de Valdevez', 22847)
+insert into concelho values(28, 2, 'Ansião', 13128);
+insert into concelho values(29, 2, 'Arcos de Valdevez', 22847);
 insert into concelho values(30, 2, 'Arganil', 12145);
 insert into concelho values(31, 2, 'Armamar', 6297);
 insert into concelho values(32, 2, 'Arouca', 22359);
@@ -40,9 +40,9 @@ insert into concelho values(33, 2, 'Arraiolos', 7363);
 insert into concelho values(34, 2, 'Arronches', 3165);
 insert into concelho values(35, 2, 'Arruda dos Vinhos', 13391);
 insert into concelho values(36, 2, 'Aveiro', 78450);
-insert into concelho values(37, 2, 'Avis	4 571',	4249);
+insert into concelho values(37, 2, 'Avis', 4249);
 insert into concelho values(38, 2, 'Azambuja', 21814);
-insert into concelho values(39, 2, 'Baião', 20522;
+insert into concelho values(39, 2, 'Baião', 20522);
 insert into concelho values(40, 2, 'Barcelos', 120391);
 insert into concelho values(41, 2, 'Barrancos', 1834);
 insert into concelho values(42, 2, 'Barreiro', 78764);
@@ -66,7 +66,7 @@ insert into concelho values(59, 4, 'Carregal do Sal', 9835);
 insert into concelho values(60, 4, 'Cartaxo', 24462);
 insert into concelho values(61, 4, 'Cascais', 206479);
 insert into concelho values(62, 4, 'Castanheira de Pera', 3191);
-insert into concelho values(63, 4, 'Castelo Branco', 56 109);
+insert into concelho values(63, 4, 'Castelo Branco', 56109);
 insert into concelho values(64, 4, 'Castelo de Paiva', 16733);
 insert into concelho values(65, 4, 'Castelo de Vide', 3407);
 insert into concelho values(66, 4, 'Castro Daire', 13928);
@@ -101,25 +101,25 @@ insert into concelho values(94, 4, 'Figueira de Castelo Rodrigo', 5652);
 insert into concelho values(95, 4, 'Figueiró dos Vinhos', 6169);
 insert into concelho values(96, 4, 'Fornos de Algodres', 4989);
 insert into concelho values(97, 4, 'Freixo de Espada à Cinta', 3780);
-insert into concelho values(98, 4, 'Fronteira', 3 410);
+insert into concelho values(98, 4, 'Fronteira', 3410);
 insert into concelho values(99, 4, 'Fundão', 26719);
-insert into concelho values(100, 2, 'Gavião'	3347);
-insert into concelho values(101, 2, 'Góis', 4 260);
-insert into concelho values(102, 2, 'Golegã', 5 465);
-insert into concelho values(103, 2, 'Gondomar', 168 027);
-insert into concelho values(104, 2, 'Gouveia', 14 046);
-insert into concelho values(105, 2, 'Grândola', 14 826);
-insert into concelho values(106, 2, 'Guarda', 42 541);
-insert into concelho values(107, 2, 'Guimarães', 158 124);
-insert into concelho values(108, 2, 'Idanha-a-Nova', 9 716);
-insert into concelho values(109, 2, 'Ílhavo', 38 598);
-insert into concelho values(110, 2, 'Lagoa', 22 975);
-insert into concelho values(111, 2, 'Lagos', 31 049);
+insert into concelho values(100, 2, 'Gavião', 3347);
+insert into concelho values(101, 2, 'Góis', 4260);
+insert into concelho values(102, 2, 'Golegã', 5465);
+insert into concelho values(103, 2, 'Gondomar', 168027);
+insert into concelho values(104, 2, 'Gouveia', 14046);
+insert into concelho values(105, 2, 'Grândola', 14826);
+insert into concelho values(106, 2, 'Guarda', 42541);
+insert into concelho values(107, 2, 'Guimarães', 158124);
+insert into concelho values(108, 2, 'Idanha-a-Nova', 9716);
+insert into concelho values(109, 2, 'Ílhavo', 38598);
+insert into concelho values(110, 2, 'Lagoa', 22975);
+insert into concelho values(111, 2, 'Lagos', 31049);
 insert into concelho values(112, 1, 'Lamego', 26691);
 insert into concelho values(113, 2, 'Leiria', 126897);
-insert into concelho values(114, 3, 'Lisboa',	547733);
+insert into concelho values(114, 3, 'Lisboa', 547733);
 insert into concelho values(115, 2, 'Loulé', 70622);
-insert into concelho values(116, 2, 'Loures',	205054);
+insert into concelho values(116, 2, 'Loures', 205054);
 insert into concelho values(117, 2, 'Lourinhã', 25735);
 insert into concelho values(118, 2, 'Lousã', 17604);
 insert into concelho values(119, 2, 'Lousada', 47387);
@@ -167,7 +167,7 @@ insert into concelho values(160, 3, 'Odemira', 26066);
 insert into concelho values(161, 3, 'Odivelas', 144549);
 insert into concelho values(162, 3, 'Oeiras', 172120);
 insert into concelho values(163, 3, 'Oleiros', 5721);
-insert into concelho values(164, 3, 'Olhão', 45 396);
+insert into concelho values(164, 3, 'Olhão', 45396);
 insert into concelho values(165, 3, 'Oliveira de Azeméis', 68611);
 insert into concelho values(166, 3, 'Oliveira de Frades', 10261);
 insert into concelho values(167, 3, 'Oliveira do Hospital', 20855);
@@ -181,15 +181,15 @@ insert into concelho values(174, 3, 'Pampilhosa da Serra', 4052);
 insert into concelho values(175, 3, 'Paredes', 86072);
 insert into concelho values(176, 3, 'Paredes de Coura', 8560);
 insert into concelho values(177, 3, 'Pedrógão Grande', 3429);
-insert into concelho values(178, 3, 'Penacova', 13 812);
-insert into concelho values(179, 3, 'Penafiel', 69 922);	
+insert into concelho values(178, 3, 'Penacova', 13812);
+insert into concelho values(179, 3, 'Penafiel', 69922);	
 insert into concelho values(180, 3, 'Penalva do Castelo', 7175);
 insert into concelho values(181, 3, 'Penamacor', 4831);
 insert into concelho values(182, 3, 'Penedono',  610);
 insert into concelho values(183, 3, 'Penela', 5439);
 insert into concelho values(184, 3, 'Peniche', 26487);
 insert into concelho values(185, 3, 'Peso da Régua', 5830);
-insert into concelho values(186, 3, 'Pinhel', 8607)
+insert into concelho values(186, 3, 'Pinhel', 8607);
 insert into concelho values(187, 3, 'Pombal', 51684);
 insert into concelho values(188, 1, 'Ponte da Barca', 11210);
 insert into concelho values(189, 1, 'Ponte de Lima', 41499);
@@ -204,7 +204,7 @@ insert into concelho values(197, 1, 'Póvoa de Varzim', 63408);
 insert into concelho values(198, 1, 'Proença-a-Nova', 8314);
 insert into concelho values(199, 1, 'Redondo', 7031);
 insert into concelho values(200, 1, 'Reguengos de Monsaraz', 10828);
-insert into concelho values(201, 1, 'Resende', 11 364);
+insert into concelho values(201, 1, 'Resende', 11364);
 insert into concelho values(202, 1, 'Ribeira de Pena', 6031);
 insert into concelho values(203, 1, 'Rio Maior', 21192);
 insert into concelho values(204, 1, 'Sabrosa', 6361);
@@ -228,7 +228,7 @@ insert into concelho values(221, 1, 'Sernancelhe', 5671);
 insert into concelho values(222, 1, 'Serpa', 15623);
 insert into concelho values(223, 1, 'Sertã', 15880);
 insert into concelho values(224, 1, 'Sesimbra', 49500);
-insert into concelho values(225, 1, 'Setúbal'	121185);
+insert into concelho values(225, 1, 'Setúbal', 121185);
 insert into concelho values(226, 1, 'Sever do Vouga', 12356);
 insert into concelho values(227, 1, 'Silves', 37126);
 insert into concelho values(228, 1, 'Sines', 14238);
@@ -337,42 +337,39 @@ insert into medico values(21, 'Valério Antas', 'psiquiatria');
 insert into medico values(22, 'Tairine Mora', 'psiquiatria');
 insert into medico values(23, 'Martinho Afonso', 'medicina geral e familiar');
 
-insert into consulta values(21, 1, '2020-08-22 15:11:18', 'Farmácia da Luz');
+insert into consulta values(21, 1, '2020-8-22 15:11:18', 'Farmácia da Luz');
 /* TESTAR O CHECK */
-insert into consulta values(11, 3,'2020-07-23 13:10:11', 'Clínica Rio Verde');
-insert into consulta values(11, 3,'2020-07-24 13:10:11', 'O Melhor Hospital que Existe');
-insert into consulta values(8, 1, '2019-05-31 17:30:00', 'Hospital de Santa Maria')
-insert into consulta values(4, 2, '2020-09-03 12:06:05', 'Hospital Carérrimo');
+insert into consulta values(11, 3,'2020-7-24 13:10:11', 'O Melhor Hospital que Existe');
+insert into consulta values(8, 1, '2019-5-31 17:30:00', 'SAMS');
+insert into consulta values(4, 2, '2020-9-3 12:06:05', 'Hospital Carérrimo');
 insert into consulta values(19, 5, '2020-10-30 14:15:00', 'SAMS');
 
 /*num_cedula, num_doente, dia_hora, substancia*/
-insert into prescricao values(11, 3, '2019-07-24 13:10:11', 'paracetamol');
-insert into prescricao values(12, 2, '2019-04-03 12:06:05', 'xanax');
-insert into prescricao values(11, 3, '2020-07-24 13:10:11', 'paracetamol');
-insert into prescricao values(12, 2, '2019-02-03 12:06:05', 'aspirina');
-insert into prescricao values(12, 3, '2019-07-24 13:10:11', 'aspirina');
-insert into prescricao values(4, 2, '2020-09-03 12:06:05', 'xanax');
-insert into prescricao values(11, 3, '2019-07-24 13:10:11', 'brufen');
-insert into prescricao values(4, 2, '2019-12-22 11:43:05', 'aspirina');
+insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'paracetamol',400);
+insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'xanax',600);
+insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'aspirina',2);
+insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'brufen',200);
+insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'aspirina',9);
 
 /*num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst*/
-insert into analise(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019-05-31 18:00:25', 'Laboratório Razoável', 'Glicémia', 15);
-insert into analise(2, 'cardiologia', 11, 3, '2020-07-24 13:10:11', '2020-09-25 15:30:00', 'Isto Sim É Um Laboratório', 'Leucócitos', 50);
-insert into analise(3, 'neurologia', 4, 2, '2020-09-03 12:06:05', '2020-09-10 08:00:00', 'Laboratório de São João', 'Leucócitos', 50);
+insert into analise values(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019-05-31 18:00:25', 'Glicémia', 15,'Laboratório Razoável');
+insert into analise values(2, 'cardiologia', 11, 3, '2020-07-24 13:10:11', '2020-09-25 15:30:00', 'Leucócitos', 50, 'Isto Sim É Um Laboratório');
+insert into analise values(3, 'neurologia', 4, 2, '2020-09-03 12:06:05', '2020-09-10 08:00:00', 'Leucócitos', 50,'Laboratório de São João');
 
 
 /*num_venda, inst, data_registo, substancia, quant, preco*/
-insert into venda_farmacia values(1, '2020-11-18 12:06:05', 'brufen', '200', 15, 'Casa Farmacêutica'); /*em arouca*/
-insert into venda_farmacia values(1, '2019-12-22 11:43:05', 'aspirina', '200', 15, 'Farmácia Nova Iorque'); /*em arouca*/
-insert into venda_farmacia values(2, '2020-11-18 10:00:01', 'ben-u-ron', '600', 40, 'Farmácia Decadente');
-insert into venda_farmacia values(3, '2020-11-18 08:50:00', 'xanax', '600', 25, 'Farmácia Extremamente Decadente');
-insert into venda_farmacia values(4, '2020-11-18 15:40:00', 'paracetamol', '400', 20, 'Farmácia de Jesus');
+insert into vendaFarmacia values(1, 'Casa Farmacêutica', '2020-11-18 12:06:05','brufen',200,15); /*em arouca*/
+insert into vendaFarmacia values(2, 'Farmácia Nova Iorque', '2019-12-22 11:43:05','aspirina',200,15); /*em arouca*/
+insert into vendaFarmacia values(3, 'Farmácia Decadente','2020-11-18 10:00:01','ben-u-ron',600,40);
+insert into vendaFarmacia values(4, 'Farmácia Extremamente Decadente','2020-11-18 08:50:00', 'xanax',600,25);
+insert into vendaFarmacia values(5, 'Farmácia de Jesus','2020-11-18 15:40:00', 'paracetamol',400,20);
 
 /*num_cedula, num_doente, data, subs, num_venda*/
-insert into prescricao_venda values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
-insert into prescricao_venda values(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
-insert into prescricao_venda values(11, 3, '2020-07-24 13:10:11', 'brufen', 1); /*em arouca*/
-insert into prescricao_venda values(4, 2, '2019-12-22 11:43:05', 'aspirina', 2); /*em arouca*/
+insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
+insert into prescricaoVenda values(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
+insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'brufen', 1); /*em arouca*/
+insert into prescricaoVenda values(4, 2, '2020-9-3 12:06:05', 'aspirina', 2); /*em arouca*/
+
 
 
 

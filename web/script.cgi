@@ -11,7 +11,7 @@ import psycopg2.extras
 app = Flask(__name__)
 
 DB_HOST="db.tecnico.ulisboa.pt"
-DB_USER="ist192509"
+DB_USER="ist192539"
 DB_DATABASE=DB_USER
 DB_PASSWORD="dqav4036"
 DB_CONNECTION_STRING = "host=%s dbname=%s user=%s password=%s" % (DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD)
