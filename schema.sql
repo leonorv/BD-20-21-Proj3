@@ -10,15 +10,15 @@ drop table if exists PrescricaoVenda cascade;
 drop table if exists Analise cascade;
 
 create table Regiao(
-    num_regiao serial not null unique,
+    num_regiao integer not null,
     nome char(50) not null unique check(nome in ('Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve')),
     num_habitantes integer not null check(num_habitantes > 0),
     primary key(num_regiao)
 );
 
 create table Concelho(
-    num_concelho serial not null,
-    num_regiao serial not null,
+    num_concelho integer not null,
+    num_regiao integer not null,
     nome char(50) not null unique,
     num_habitantes integer not null check(num_habitantes > 0),
     foreign key(num_regiao) references Regiao(num_regiao) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -26,24 +26,24 @@ create table Concelho(
 );
 
 create table Instituicao(
-    nome char(50) not null unique,
+    nome char(50) not null,
     tipo char(20) not null check(tipo in ('farmacia', 'laboratorio', 'clinica', 'hospital')),
-    num_concelho serial not null,
-    num_regiao serial not null,
+    num_concelho integer not null,
+    num_regiao integer not null,
     foreign key(num_concelho, num_regiao) references Concelho(num_concelho, num_regiao) ON DELETE CASCADE ON UPDATE CASCADE,
     primary key(nome)
 );
 
 create table Medico(
-    num_cedula serial not null unique,
+    num_cedula integer not null unique,
     nome char(50) not null, 
     especialidade char(50) not null,
     primary key(num_cedula)
 );
 
 create table Consulta(
-    num_cedula serial not null,
-    num_doente serial not null,
+    num_cedula integer not null,
+    num_doente integer not null,
     dia_hora timestamp not null check(extract(dow from dia_hora) not in (1, 7)),
     nome_instituicao char(50) not null,
     foreign key(num_cedula) references Medico(num_cedula) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -53,8 +53,8 @@ create table Consulta(
 );
 
 create table Prescricao(
-    num_cedula serial not null,
-    num_doente serial not null,
+    num_cedula integer not null,
+    num_doente integer not null,
     dia_hora timestamp not null,
     substancia char(50) not null,
     quant integer not null check(quant > 0),
@@ -62,25 +62,10 @@ create table Prescricao(
     primary key(num_cedula, num_doente, dia_hora, substancia)
 );
 
-create table Analise(
-    num_analise serial not null unique,
-    especialidade char(50) not null, 
-    num_cedula serial, 
-    num_doente serial, 
-    dia_hora timestamp, 
-    data_registo timestamp not null, 
-    nome char(50) not null, 
-    quant integer not null, 
-    inst char(50) not null,
-    foreign key(num_cedula, num_doente, dia_hora) references Consulta(num_cedula, num_doente, dia_hora),
-    foreign key(inst) references Instituicao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    primary key(num_analise)
-    /*constraint RI_analise check(num_cedula = null and num_doente = null and dia_hora = null)*/
-);
 
 
 create table VendaFarmacia(
-    num_venda serial not null unique, 
+    num_venda integer not null, 
     inst char(50) not null,
     data_registo timestamp not null, 
     substancia char(50) not null,
@@ -91,14 +76,30 @@ create table VendaFarmacia(
 );
 
 create table PrescricaoVenda(
-    num_cedula serial not null,
-    num_doente serial not null,
+    num_cedula integer not null,
+    num_doente integer not null,
     dia_hora timestamp not null,
     substancia char(50) not null,
     num_venda serial not null,
     foreign key(num_venda) references VendaFarmacia(num_venda) ON DELETE CASCADE ON UPDATE CASCADE,
     foreign key(num_cedula, num_doente, dia_hora, substancia) references Prescricao(num_cedula, num_doente, dia_hora, substancia) ON DELETE CASCADE ON UPDATE CASCADE, 
     primary key(num_cedula, num_doente, dia_hora, substancia, num_venda) 
+);
+
+create table Analise(
+    num_analise integer not null,
+    especialidade char(50) not null, 
+    num_cedula integer, 
+    num_doente integer, 
+    dia_hora timestamp, 
+    data_registo timestamp not null, 
+    nome char(50) not null, 
+    quant integer not null, 
+    inst char(50) not null,
+    foreign key(num_cedula, num_doente, dia_hora) references Consulta(num_cedula, num_doente, dia_hora),
+    foreign key(inst) references Instituicao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    primary key(num_analise)
+    /*constraint RI_analise check(num_cedula = null and num_doente = null and dia_hora = null)*/
 );
 
 
