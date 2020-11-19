@@ -44,7 +44,7 @@ create table Medico(
 create table Consulta(
     num_cedula integer not null,
     num_doente integer not null,
-    dia_hora timestamp not null check(extract(dow from dia_hora) not in (1, 7)),
+    dia_hora timestamp not null check(extract(dow from dia_hora) not in (0, 6)),
     nome_instituicao char(50) not null,
     foreign key(num_cedula) references Medico(num_cedula) ON DELETE CASCADE ON UPDATE CASCADE,
     foreign key(nome_instituicao) references Instituicao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -86,25 +86,20 @@ create table PrescricaoVenda(
     primary key(num_cedula, num_doente, dia_hora, substancia, num_venda) 
 );
 
-create function analise.getEspecialidade(
-    num_cedula integer
-)
-returns char(50)
-begin
-    return query
-    select m.especialidade from Medico as m where m.num_cedula = num_cedula;
-end;
+
 /*
-CREATE FUNCTION sales.udfNetSale(
-    @quantity INT,
-    @list_price DEC(10,2),
-    @discount DEC(4,2)
-)
-RETURNS DEC(10,2)
-AS 
-BEGIN
-    RETURN @quantity * @list_price * (1 - @discount);
-END;*/
+extensão procedimental para a restrição de integridade da analise
+
+create or replace function getEspecialidade ()
+returns char(50) as $especialidade$
+declare
+	especialidade char(50);
+begin
+   select m.especialidade into especialidade from Medico as m where m.num_cedula = num_cedula;
+   return especialidade;
+end;
+$especialidade$ language plpgsql; 
+*/
 
 create table Analise(
     num_analise integer not null,
@@ -118,9 +113,11 @@ create table Analise(
     inst char(50) not null,
     foreign key(num_cedula, num_doente, dia_hora) references Consulta(num_cedula, num_doente, dia_hora),
     foreign key(inst) references Instituicao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    primary key(num_analise),
+    primary key(num_analise)
+    /*
     constraint RI_analise check((num_cedula = null and num_doente = null and dia_hora = null) or 
-    getEspecialidade(num_cedula) = especialidade)
+    getEspecialidade() = especialidade) 
+    
+    comentado porque é uma restrição de integridade definida com recurso a extensões procedimentais
+    */
 );
-
-

@@ -34,7 +34,7 @@ having count(p_v.num_venda) = (
     select count(i.nome)
     from instituicao as i, concelho as c
     where c.nome = 'Arouca' and i.num_concelho = c.num_concelho and i.tipo = 'farmacia'
-)
+);
 
 /*QUERY 4*/
 select distinct a.num_doente 
@@ -45,8 +45,4 @@ and not exists (
     select * from venda_farmacia as v_f, prescricaovenda as p_v
     where a.num_doente = num_doente and extract(year from a.data_registo) = extract(year from current_date) and
     extract(month from a.data_registo) = extract(month from current_date) and v_f.num_venda = p_v.num_venda
-    );
-
-
-
-    
+    ); 

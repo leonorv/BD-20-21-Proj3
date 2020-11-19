@@ -337,15 +337,45 @@ insert into medico values(21, 'Valério Antas', 'psiquiatria');
 insert into medico values(22, 'Tairine Mora', 'psiquiatria');
 insert into medico values(23, 'Martinho Afonso', 'medicina geral e familiar');
 
-insert into consulta values(21, 1, '2020-8-22 15:11:18', 'Farmácia da Luz');
-insert into consulta values(11, 3,'2020-7-24 13:10:11', 'O Melhor Hospital que Existe');
-insert into consulta values(8, 1, '2019-5-31 17:30:00', 'SAMS');
-insert into consulta values(4, 2, '2020-9-3 12:06:05', 'Hospital Carérrimo');
+insert into consulta values(21, 1, '2020-8-21 15:11:18', 'Farmácia da Luz');
+insert into consulta values(11, 3, '2020-7-24 13:10:11', 'O Melhor Hospital que Existe');
+insert into consulta values( 8, 1, '2019-5-31 17:30:00', 'SAMS');
+insert into consulta values( 4, 2, '2020-9-3 12:06:05', 'Hospital Carérrimo');
 insert into consulta values(19, 5, '2020-10-30 14:15:00', 'SAMS');
-insert into consulta values(5, 5, '2019-01-01 10:15:00', 'Hospital Carérrimo');
-insert into consulta values(5, 4, '2020-11-03 12:06:05', 'Laboratório de São João');
-insert into consulta values(2, 4, '2020-07-22 12:12:12', 'Centro Hospitalar Azul');
-insert into consulta values(2, 5, '2020-07-05 12:12:12', 'Centro Hospitalar Azul');
+insert into consulta values( 5, 5, '2019-01-01 10:15:00', 'Hospital Carérrimo');
+insert into consulta values( 5, 4, '2020-11-03 12:06:05', 'Laboratório de São João');
+insert into consulta values( 2, 4, '2020-07-22 12:12:12', 'Centro Hospitalar Azul');
+insert into consulta values( 2, 5, '2020-07-06 12:12:12', 'Centro Hospitalar Azul');
+
+insert into consulta values( 1, 1, '2019-01-17 15:11:18', 'Centro Hospitalar São Sebastião');
+insert into consulta values( 1, 3, '2020-11-20 13:10:11', 'Centro Hospitalar São Sebastião');
+insert into consulta values( 2, 1, '2019-11-20 17:30:00', 'Hospital Extremamente Caro');
+insert into consulta values( 2, 2, '2020-11-20 12:06:05', 'Hospital Extremamente Caro');
+insert into consulta values( 3, 10, '2020-11-23 14:15:00', 'Hospital Extremamente Caro');
+insert into consulta values( 3, 5, '2020-11-24 10:15:00', 'Hospital Carérrimo');
+insert into consulta values( 4, 6, '2020-11-25 12:06:05', 'Clínica da Cooperativa');
+insert into consulta values( 4, 7, '2020-11-26 12:12:12', 'Clínica da Cooperativa');
+insert into consulta values( 5, 8, '2020-11-27 12:12:12', 'Clínica da Cooperativa');
+
+insert into consulta values( 5, 1, '2020-11-19 15:11:18', 'O Melhor Hospital que Existe');
+insert into consulta values( 5, 3, '2020-11-20 13:10:11', 'O Melhor Hospital que Existe');
+insert into consulta values( 6, 1, '2019-11-20 17:30:00', 'O Melhor Hospital que Existe');
+insert into consulta values( 6, 2, '2020-11-20 12:06:05', 'Hospital Carérrimo');
+insert into consulta values( 6, 9, '2020-11-23 14:15:00', 'SAMS');
+insert into consulta values( 7, 5, '2020-11-24 10:15:00', 'SAMS');
+insert into consulta values( 7, 6, '2020-11-25 12:06:05', 'Laboratório de São João');
+insert into consulta values( 8, 7, '2020-11-26 12:12:12', 'Laboratório de São João');
+insert into consulta values( 8, 8, '2020-11-27 12:12:12', 'Laboratório de São João');
+
+insert into consulta values( 9, 1, '2020-11-27 15:11:18', 'Hospital Incrível');
+insert into consulta values( 9, 3, '2020-11-27 13:10:11', 'Hospital Incrível');
+insert into consulta values( 9, 1, '2020-11-30 17:30:00', 'Hospital Incrível');
+insert into consulta values( 9, 2, '2020-11-30 12:06:05', 'Hospital Incrível');
+insert into consulta values(10, 5, '2020-11-30 14:15:00', 'Laboratório Razoável');
+insert into consulta values(10, 9, '2020-12-1 10:15:00', 'Laboratório Razoável');
+insert into consulta values(11, 6, '2020-12-1 12:06:05', 'Laboratório Razoável');
+insert into consulta values(11, 7, '2020-12-2 12:12:12', 'Laboratório Razoável');
+insert into consulta values(11, 11, '2020-12-3 12:12:12', 'Laboratório Razoável');
 
 
 
@@ -355,11 +385,18 @@ insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'xanax',600);
 insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'aspirina',2);
 insert into prescricao values(11, 3, '2020-7-24 13:10:11', 'brufen',200);
 insert into prescricao values(4, 2, '2020-9-3 12:06:05', 'aspirina',9);
+insert into prescricao values(1, 1, '2019-01-17 15:11:18', 'aspirina',9);
 
 insert into prescricao values(8, 1, '2019-5-31 17:30:00', 'brufen', 10);
 insert into prescricao values(5, 5, '2019-01-01 10:15:00', 'valium', 60);
 insert into prescricao values(2, 4, '2020-07-22 12:12:12', 'aspirina', 200); /*em arouca*/
-insert into prescricao values(2, 5, '2020-07-05 12:12:12', 'aspirina', 200); /*em arouca*/
+insert into prescricao values(2, 5, '2020-07-06 12:12:12', 'aspirina', 200); /*em arouca*/
+
+insert into prescricao values(9, 1, '2020-11-27 15:11:18', 'paracetamol',400);
+insert into prescricao values(9, 2, '2020-11-30 12:06:05', 'zyrtec',600);
+insert into prescricao values(10, 5, '2020-11-30 14:15:00', 'zyrtec', 50);
+insert into prescricao values(11, 7, '2020-12-02 12:12:12', 'xanax',200);
+insert into prescricao values(11, 11, '2020-12-03 12:12:12', 'xanax', 100);
 
 /*num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst*/
 insert into analise values(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019-05-31 18:00:25', 'Glicémia', 15,'Laboratório Razoável');
@@ -375,7 +412,75 @@ insert into vendaFarmacia values(4, 'Farmácia Extremamente Decadente','2020-11-
 insert into vendaFarmacia values(5, 'Farmácia de Jesus','2020-11-18 15:40:00', 'paracetamol',400,20);
 insert into vendaFarmacia values(6, 'Farmácia de Jesus', '2020-11-18 12:06:05','brufen',200,25); /*em belmonte*/
 insert into vendaFarmacia values(7, 'Casa Farmacêutica', '2020-07-22 12:12:12','aspirina',200,15); /*em arouca*/
-insert into vendaFarmacia values(8, 'Farmácia Nova Iorque', '2020-07-05 12:12:12','aspirina',200,15); /*em arouca*/
+insert into vendaFarmacia values(8, 'Farmácia Nova Iorque', '2020-07-06 12:12:12','aspirina',200,15); /*em arouca*/
+
+insert into vendaFarmacia values(9, 'Farmácia Decadente', '2020-11-27 15:11:18', 'paracetamol',400, 20);
+insert into vendaFarmacia values(10, 'Farmácia Decadente', '2020-11-30 12:06:05', 'zyrtec',600, 50);
+insert into vendaFarmacia values(11, 'Farmácia Decadente', '2020-11-30 14:15:00', 'zyrtec', 50, 50);
+insert into vendaFarmacia values(12, 'Farmácia Decadente', '2020-12-02 12:12:12', 'xanax', 200, 20);
+insert into vendaFarmacia values(13, 'Farmácia Decadente', '2020-12-03 12:12:12', 'xanax', 100, 15);
+
+insert into vendaFarmacia values(14, 'Farmácia Decadente', '2020-11-19 15:11:18', 'ben-u-ron',400, 20);
+insert into vendaFarmacia values(15, 'Farmácia Decadente', '2020-11-19 12:06:05', 'ben-u-ron',600, 50);
+insert into vendaFarmacia values(16, 'Casa Farmacêutica', '2020-11-19 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(17, 'Farmácia Decadente', '2020-11-20 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(18, 'Farmácia Decadente', '2020-11-20 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(19, 'Casa Farmacêutica', '2020-11-20 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(20, 'Farmácia Decadente', '2020-11-21 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(21, 'Farmácia Decadente', '2020-11-21 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(22, 'Casa Farmacêutica', '2020-11-21 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(23, 'Farmácia Decadente', '2020-11-22 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(24, 'Farmácia Decadente', '2020-11-22 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(25, 'Casa Farmacêutica', '2020-11-22 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(26, 'Farmácia Decadente', '2020-1-23 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(27, 'Farmácia Decadente', '2020-11-23 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(28, 'Casa Farmacêutica', '2020-11-23 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(29, 'Farmácia Decadente', '2020-11-24 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(30, 'Farmácia Decadente', '2020-11-24 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(31, 'Casa Farmacêutica', '2020-11-24 12:12:12', 'ben-u-ron', 100, 15);
+
+insert into vendaFarmacia values(32, 'Farmácia Decadente', '2020-11-25 14:15:00', 'ben-u-ron', 50, 50);
+insert into vendaFarmacia values(33, 'Farmácia Decadente', '2020-11-25 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(34, 'Casa Farmacêutica', '2020-11-25 12:12:12', 'ben-u-ron', 100, 15);
+
+insert into vendaFarmacia values(35, 'Farmácia Decadente', '2020-11-26 14:15:00', 'ben-u-ron', 50, 50);
+insert into vendaFarmacia values(36, 'Farmácia Decadente', '2020-11-26 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(37, 'Casa Farmacêutica', '2020-11-26 12:12:12', 'ben-u-ron', 100, 15);
+
+insert into vendaFarmacia values(38, 'Farmácia Decadente', '2020-11-27 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(39, 'Farmácia Decadente', '2020-11-27 14:15:00', 'ben-u-ron', 50, 50);
+insert into vendaFarmacia values(40, 'Casa Farmacêutica', '2020-11-27 12:12:12', 'ben-u-ron', 200, 20);
+
+insert into vendaFarmacia values(41, 'Farmácia Decadente', '2020-11-28 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(42, 'Farmácia Decadente', '2020-11-28 14:15:00', 'ben-u-ron', 50, 50);
+insert into vendaFarmacia values(43, 'Casa Farmacêutica', '2020-11-28 12:12:12', 'ben-u-ron', 200, 20);
+
+insert into vendaFarmacia values(44, 'Farmácia Decadente', '2020-11-29 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(45, 'Farmácia Decadente', '2020-11-29 14:15:00', 'ben-u-ron', 50, 50);
+insert into vendaFarmacia values(46, 'Casa Farmacêutica', '2020-11-29 12:12:12', 'ben-u-ron', 200, 20);
+
+insert into vendaFarmacia values(47, 'Farmácia Decadente', '2020-11-30 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(48, 'Farmácia Decadente', '2020-11-30 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(49, 'Casa Farmacêutica', '2020-11-30 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(50, 'Farmácia Decadente', '2020-12-01 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(51, 'Farmácia Decadente', '2020-12-01 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(52, 'Casa Farmacêutica', '2020-12-01 14:15:00', 'ben-u-ron', 50, 50);
+
+insert into vendaFarmacia values(53, 'Farmácia Decadente', '2020-12-02 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(54, 'Farmácia Decadente', '2020-12-02 12:12:12', 'ben-u-ron', 100, 15);
+insert into vendaFarmacia values(55, 'Casa Farmacêutica', '2020-12-02 12:12:12', 'ben-u-ron', 100, 15);
+
+insert into vendaFarmacia values(56, 'Farmácia Decadente', '2020-12-03 14:15:00', 'ben-u-ron', 50, 50);
+insert into vendaFarmacia values(57, 'Farmácia Decadente', '2020-12-03 12:12:12', 'ben-u-ron', 200, 20);
+insert into vendaFarmacia values(58, 'Casa Farmacêutica', '2020-12-03 12:12:12', 'ben-u-ron', 100, 15);
+
+
 
 /*num_cedula, num_doente, data, subs, num_venda*/
 insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
@@ -383,4 +488,10 @@ insert into prescricaoVenda values(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
 insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'aspirina', 1); /*em arouca*/
 insert into prescricaoVenda values(4, 2, '2020-9-3 12:06:05', 'aspirina', 2); /*em arouca*/
 insert into prescricaoVenda values(2, 4, '2020-07-22 12:12:12', 'aspirina', 7); /*em arouca*/
-insert into prescricaoVenda values(2, 5, '2020-07-05 12:12:12', 'aspirina', 8); /*em arouca*/
+insert into prescricaoVenda values(2, 5, '2020-07-06 12:12:12', 'aspirina', 8); /*em arouca*/
+
+insert into prescricaoVenda values(9, 1, '2020-11-27 15:11:18', 'paracetamol', 9);
+insert into prescricaoVenda values(9, 2, '2020-11-30 12:06:05', 'zyrtec', 10);
+insert into prescricaoVenda values(10, 5, '2020-11-30 14:15:00', 'zyrtec', 11);
+insert into prescricaoVenda values(11, 7, '2020-12-02 12:12:12', 'xanax', 12);
+insert into prescricaoVenda values(11, 11, '2020-12-03 12:12:12', 'xanax', 12);
