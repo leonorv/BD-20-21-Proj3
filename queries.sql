@@ -25,27 +25,16 @@ having count(p.dia_hora) >= ALL
     );
 
 /*QUERY 3*/
-select distinct i.nome, m.nome
-    from vendafarmacia as v_f, prescricaovenda as p_v, instituicao as i, concelho as c, medico as m
-    where m.num_cedula = p_v.num_cedula and v_f.substancia = 'aspirina' and c.nome = 'Arouca' and i.tipo = farmacia
-    and c.num_concelho = i.num_concelho and v_f.num_venda = p_v.num_venda and i.nome = v_f.inst
-    and extract(year from current_date) = extract(year from v_f.data_registo) 
-    );
-    
-select m.nome
-from medico as m, instituicao as i
-where not exists (
-    select i.nome
+select distinct m.nome
+from prescricaovenda as p_v, medico as m, vendafarmacia as v_f, instituicao as i,concelho as c
+where p_v.num_cedula = m.num_cedula and p_v.num_venda = v_f.num_venda and 
+v_f.inst = i.nome and i.num_concelho = c.num_concelho and c.nome = 'Arouca' and i.tipo = 'farmacia'
+group by m.nome
+having count(p_v.num_venda) = (
+    select count(i.nome)
     from instituicao as i, concelho as c
-    where i.tipo = 'farmacia' and c.nome = 'Arouca' and i.num_concelho = c.num_concelho
-    except
-    select i.nome
-    from vendafarmacia as v_f, prescricaovenda as p_v, instituicao as i, concelho as c, medico as m
-    where m.num_cedula = p_v.num_cedula and v_f.substancia = 'aspirina' and c.nome = 'Arouca' 
-    and c.num_concelho = i.num_concelho and v_f.num_venda = p_v.num_venda and i.nome = v_f.inst
-    and extract(year from current_date) = extract(year from v_f.data_registo)
-    );
-
+    where c.nome = 'Arouca' and i.num_concelho = c.num_concelho and i.tipo = 'farmacia'
+)
 
 /*QUERY 4*/
 select distinct a.num_doente 
@@ -54,8 +43,8 @@ where extract(year from a.data_registo) = extract(year from current_date) and
 extract(month from a.data_registo) = extract(month from current_date)
 and not exists (
     select * from venda_farmacia as v_f, prescricaovenda as p_v
-    where a.num_doente = num_doente and where extract(year from a.data_registo) = extract(year from current_date) and
-    extract(month from a.data_registo) = extract(month from current_date and v_f.num_venda = p_v.num_venda
+    where a.num_doente = num_doente and extract(year from a.data_registo) = extract(year from current_date) and
+    extract(month from a.data_registo) = extract(month from current_date) and v_f.num_venda = p_v.num_venda
     );
 
 

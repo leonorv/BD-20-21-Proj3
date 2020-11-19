@@ -80,11 +80,31 @@ create table PrescricaoVenda(
     num_doente integer not null,
     dia_hora timestamp not null,
     substancia char(50) not null,
-    num_venda serial not null,
+    num_venda integer not null,
     foreign key(num_venda) references VendaFarmacia(num_venda) ON DELETE CASCADE ON UPDATE CASCADE,
     foreign key(num_cedula, num_doente, dia_hora, substancia) references Prescricao(num_cedula, num_doente, dia_hora, substancia) ON DELETE CASCADE ON UPDATE CASCADE, 
     primary key(num_cedula, num_doente, dia_hora, substancia, num_venda) 
 );
+
+create function analise.getEspecialidade(
+    num_cedula integer
+)
+returns char(50)
+begin
+    return query
+    select m.especialidade from Medico as m where m.num_cedula = num_cedula;
+end;
+/*
+CREATE FUNCTION sales.udfNetSale(
+    @quantity INT,
+    @list_price DEC(10,2),
+    @discount DEC(4,2)
+)
+RETURNS DEC(10,2)
+AS 
+BEGIN
+    RETURN @quantity * @list_price * (1 - @discount);
+END;*/
 
 create table Analise(
     num_analise integer not null,
@@ -98,8 +118,9 @@ create table Analise(
     inst char(50) not null,
     foreign key(num_cedula, num_doente, dia_hora) references Consulta(num_cedula, num_doente, dia_hora),
     foreign key(inst) references Instituicao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    primary key(num_analise)
-    /*constraint RI_analise check(num_cedula = null and num_doente = null and dia_hora = null)*/
+    primary key(num_analise),
+    constraint RI_analise check((num_cedula = null and num_doente = null and dia_hora = null) or 
+    getEspecialidade(num_cedula) = especialidade)
 );
 
 
