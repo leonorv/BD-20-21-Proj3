@@ -376,6 +376,7 @@ insert into consulta values(10, 9, '2020-12-1 10:15:00', 'Laboratório Razoável
 insert into consulta values(11, 6, '2020-12-1 12:06:05', 'Laboratório Razoável');
 insert into consulta values(11, 7, '2020-12-2 12:12:12', 'Laboratório Razoável');
 insert into consulta values(11, 11, '2020-12-3 12:12:12', 'Laboratório Razoável');
+insert into consulta values(18, 5, '2020-12-03 12:06:05', 'Laboratório de São João');
 
 
 
@@ -403,6 +404,7 @@ insert into analise values(1, 'oftalmologia', 8, 1, '2019-05-31 17:30:00', '2019
 insert into analise values(2, 'cardiologia', 11, 3, '2020-07-24 13:10:11', '2020-09-25 15:30:00', 'Leucócitos', 50, 'Isto Sim É Um Laboratório');
 insert into analise values(3, 'neurologia', 4, 2, '2020-09-03 12:06:05', '2020-09-10 08:00:00', 'Leucócitos', 50,'Laboratório de São João');
 insert into analise values(4, 'urologia', 5, 4, '2020-11-03 12:06:05', '2020-11-10 08:00:00', 'Leucócitos', 50,'Laboratório de São João');
+insert into analise values(5, 'radiologia', 18, 5, '2020-12-03 12:06:05', '2020-12-10 08:00:00', 'Glicémia', 50,'Laboratório de São João');
 
 /*num_venda, inst, data_registo, substancia, quant, preco*/
 insert into vendaFarmacia values(1, 'Casa Farmacêutica', '2020-07-24 13:10:11','aspirina',200,15); /*em arouca*/
