@@ -11,12 +11,12 @@ import psycopg2.extras
 app = Flask(__name__)
 
 DB_HOST="db.tecnico.ulisboa.pt"
-DB_USER="ist192539"
+DB_USER="ist192557"
 DB_DATABASE=DB_USER
-DB_PASSWORD="dqav4036"
+DB_PASSWORD="vgvo0215"
 DB_CONNECTION_STRING = "host=%s dbname=%s user=%s password=%s" % (DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD)
 
-@app.route('/')
+@app.route('/insert_inst')
 def inserir_instituicao():
   dbConn=None
   cursor=None
@@ -24,12 +24,13 @@ def inserir_instituicao():
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
     query = "INSERT INTO instituicao (nome, tipo, num_regiao, num_concelho) VALUES (%s, %s, %s, %s);"
-    data = (request.form["nome"], request.form["tipo"], request.form["num_regiao"], request.form["num_concelho"]) 
+    data = (request.form["nome"], request.form["tipo"], request.form["num_regiao"], request.form["num_concelho"])
     cursor.execute(query, data)
-    return render_template("index.html", cursor=cursor)
+    return query
   except Exception as e:
     return str(e) #Renders a page with the error.
   finally:
+    ddConn.commit()
     cursor.close()
     dbConn.close()
 

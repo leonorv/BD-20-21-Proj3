@@ -482,6 +482,8 @@ insert into vendaFarmacia values(56, 'Farmácia Decadente', '2020-12-03 14:15:00
 insert into vendaFarmacia values(57, 'Farmácia Decadente', '2020-12-03 12:12:12', 'ben-u-ron', 200, 20);
 insert into vendaFarmacia values(58, 'Casa Farmacêutica', '2020-12-03 12:12:12', 'ben-u-ron', 100, 15);
 
+
+
 /*num_cedula, num_doente, data, subs, num_venda*/
 insert into prescricaoVenda values(11, 3, '2020-07-24 13:10:11', 'paracetamol', 4);
 insert into prescricaoVenda values(4, 2, '2020-09-03 12:06:05', 'xanax', 5);
