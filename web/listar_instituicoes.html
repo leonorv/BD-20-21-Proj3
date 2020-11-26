@@ -1,0 +1,29 @@
+<doctype html>
+<title>Lista de instituições</title>
+<body style="font-family:Arial; font-size:20px;">
+    {% if cursor %}
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Número da região</th>
+                    <th>Número do concelho</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in cursor %}
+                    <tr>
+                        <td>{{ record[0] }}</td>
+                        <td>{{ record[1] }}</td>
+                        <td>{{ record[2] }}</td>
+                        <td>{{ record[3] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p> Erro: ao obter dados da base de dados!</p>
+    {% endif %}
+</body>
+</doctype>
