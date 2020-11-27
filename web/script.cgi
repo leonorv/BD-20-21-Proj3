@@ -11,9 +11,9 @@ import psycopg2.extras
 script = Flask(__name__)
 
 DB_HOST="db.tecnico.ulisboa.pt"
-DB_USER="ist192557"
-DB_DATABASE="DB_USER"
-DB_PASSWORD="vgvo0215"
+DB_USER="ist192539"
+DB_DATABASE=DB_USER
+DB_PASSWORD="hrqm0025"
 DB_CONNECTION_STRING = "host=%s dbname=%s user=%s password=%s" % (DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD)
 
 @script.route('/')
@@ -23,15 +23,23 @@ def inicio():
   except Exception as e:
     return str(e)
 
-@script.route('/data')
-def preencher_dados():
+@script.route('/dataInstituicao')
+def preencher_dados_instituicao():
   try:
     return render_template("instituicao.html")
   except Exception as e:
     return str(e)
 
-@script.route('/insert', methods=["POST"])
-def inserir():
+@script.route('/dataAnalise')
+def preencher_dados_analise():
+  try:
+    return render_template("analise.html")
+  except Exception as e:
+    return str(e)
+
+
+@script.route('/insertInstituicao', methods=["POST"])
+def inserir_instituicao():
   dbConn=None
   cursor=None
   try:
@@ -42,7 +50,24 @@ def inserir():
     cursor.execute(query, data)
     return query
   except Exception as e:
-    print("entrou");
+    return str(e) #Renders a page with the error.
+  finally:
+    dbConn.commit()
+    cursor.close()
+    dbConn.close()
+
+@script.route('/insertAnalise', methods=["POST"])
+def inserir_analise():
+  dbConn=None
+  cursor=None
+  try:
+    dbConn = psycopg2.connect(DB_CONNECTION_STRING)
+    cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+    query = "insert into analise (num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst) values(%s, %s, %s, %s, %s, %s, %s, %s, %s);" 
+    data = (request.form["num_analise"], request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"])
+    cursor.execute(query, data)
+    return query
+  except Exception as e:
     return str(e) #Renders a page with the error.
   finally:
     dbConn.commit()
