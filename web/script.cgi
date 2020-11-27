@@ -34,19 +34,18 @@ def preencher_dados():
 def inserir():
   dbConn=None
   cursor=None
-  print("hello";)
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "insert into instituicao values(%s, %s, %s, %s);" 
-    data = (request.form["nome"], request.form["tipo"], request.form["num_regiao"], request.form["num_concelho"])
+    query = "insert into instituicao (nome, tipo, num_concelho, num_regiao) values(%s, %s, %s, %s);" 
+    data = (request.form["nome"], request.form["tipo"], request.form["num_concelho"], request.form["num_regiao"])
     cursor.execute(query, data)
     return query
   except Exception as e:
     print("entrou");
     return str(e) #Renders a page with the error.
   finally:
-    ddConn.commit()
+    dbConn.commit()
     cursor.close()
     dbConn.close()
 
