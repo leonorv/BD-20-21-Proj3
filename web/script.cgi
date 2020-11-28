@@ -13,15 +13,15 @@ try:
   cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
   
   try:
-    last_num_analise = cursor.execute("SELECT max(num_analise) FROM analise")+1
+    last_num_analise = cursor.execute("SELECT max(num_analise) FROM analise;")+1
   except:
     last_num_analise = 0
   try:
-    last_num_cedula = cursor.execute("SELECT max(num_cedula) FROM medico")+1
+    last_num_cedula = cursor.execute("SELECT max(num_cedula) FROM medico;")+1
   except:
     last_num_cedula = 0
   try:
-    last_num_venda = cursor.execute("SELECT max(num_venda) FROM analise")+1
+    last_num_venda = cursor.execute("SELECT max(num_venda) FROM analise;")+1
   except:
     last_num_venda = 0
 except Exception as e:
@@ -188,8 +188,7 @@ def update_analise():
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
     query = "update analise set num_analise=%s, especialidade=%s, num_cedula=%s, dia_hora=%s, data_registo=%s, nome=%s, quant=%s, inst=%s where num_analise=%s;"
-    data = (request.form["num_analise"], request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], \
-    request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"], request.form["num_analise"])
+    data = (request.form["num_analise"], request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"], request.form["num_analise"])
     cursor.execute(query, data)
     return query
   except Exception as e:
@@ -259,8 +258,8 @@ def update_medico():
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "update medico set nome=%s, especialidade=%s, num_concelho=%s, where num_cedula=%s;"
-    data = (request.form["nome"], request.form["especialidade"], request.form["cedula"])
+    query = "update medico set nome=%s, especialidade=%s where num_cedula=%s;"
+    data = (request.form["nome"], request.form["especialidade"], request.form["num_cedula"])
     cursor.execute(query, data)
     return query
   except Exception as e:
@@ -294,7 +293,7 @@ def remover_medico():
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "delete from instituicao where num_cedula=%s;"
+    query = "delete from medico where num_cedula=%s;"
     data = (request.args["num_cedula"],)
     cursor.execute(query, data)
     return query
@@ -358,7 +357,7 @@ def update_prescricao():
     cursor.close()
     dbConn.close()
 
-@script.route('/list_prescricao')
+@script.route('/list_prescricoes')
 def listar_prescricao():
   dbConn=None
   cursor=None
@@ -381,8 +380,8 @@ def remover_prescricao():
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "delete from prescricao where num_cedula=%s and num_doente=%s and data=%s and substancia=%s;"
-    data = (request.args["num_cedula"], request.args["num_doente"], request.args["data"], request.args["substancia"])
+    query = "delete from prescricao where num_cedula=%s and num_doente=%s and dia_hora=%s and substancia=%s;"
+    data = (request.args["num_cedula"], request.args["num_doente"], request.args["dia_ho"], request.args["substancia"])
     cursor.execute(query, data)
     return query
   except Exception as e:
