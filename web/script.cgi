@@ -12,9 +12,9 @@ script = Flask(__name__)
 
 DB_HOST="db.tecnico.ulisboa.pt"
 DB_USER="ist192557"
-DB_DATABASE="DB_USER"
+DB_DATABASE=DB_USER
 DB_PASSWORD="vgvo0215"
-DB_CONNECTION_STRING = "host=%s dbname=%s user=%s password=%s" % (DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD)
+DB_CONNECTION_STRING = "host=%s dbname=%s user=%s password=%s" %(DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD)
 
 @script.route('/')
 def inicio():
@@ -23,26 +23,69 @@ def inicio():
   except Exception as e:
     return str(e)
 
-@script.route('/data')
+@script.route('/data_inst')
 def preencher_dados():
   try:
     return render_template("instituicao.html")
   except Exception as e:
     return str(e)
 
-@script.route('/insert', methods=["POST"])
+@script.route('/alterar_inst')
+def alterar_dados():
+  try:
+    return render_template("alterar_inst.html", params=request.args)
+  except Exception as e:
+    return str(e)
+
+
+@script.route('/update_inst', methods=["POST"])
+def update_balance():
+  dbConn=None
+  cursor=None
+  try:
+    dbConn = psycopg2.connect(DB_CONNECTION_STRING)
+    cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+    query = "update instituicao set nome=%s, tipo=%s, num_concelho=%s, num_regiao=%s where nome=%s;"
+    data = (request.form["nome"], request.form["tipo"], request.form["num_concelho"], request.form["num_regiao"], request.form["nome_antigo"])
+    cursor.execute(query, data)
+    return query
+  except Exception as e:
+    return str(e)
+  finally:
+    dbConn.commit()
+    cursor.close()
+    dbConn.close()
+
+@script.route('/insert_inst', methods=["POST"])
 def inserir():
   dbConn=None
   cursor=None
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "insert into instituicao (nome, tipo, num_concelho, num_regiao) values(%s, %s, %s, %s);" 
+    query = """insert into instituicao (nome, tipo, num_concelho, num_regiao) values (%s, %s, %s, %s);"""
     data = (request.form["nome"], request.form["tipo"], request.form["num_concelho"], request.form["num_regiao"])
     cursor.execute(query, data)
     return query
   except Exception as e:
-    print("entrou");
+    return str(e) #Renders a page with the error.
+  finally:
+    dbConn.commit()
+    cursor.close()
+    dbConn.close()
+
+@script.route('/remover_inst')
+def remove():
+  dbConn=None
+  cursor=None
+  try:
+    dbConn = psycopg2.connect(DB_CONNECTION_STRING)
+    cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+    query = "delete from instituicao where nome=%s;"
+    data = (request.args["nome"],)
+    cursor.execute(query, data)
+    return query
+  except Exception as e:
     return str(e) #Renders a page with the error.
   finally:
     dbConn.commit()
@@ -50,7 +93,7 @@ def inserir():
     dbConn.close()
 
 @script.route('/list')
-def listar_instituicoes():
+def listar():
   dbConn=None
   cursor=None
   try:

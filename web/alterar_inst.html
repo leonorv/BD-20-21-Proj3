@@ -1,0 +1,27 @@
+<doctype html>
+    <title>Alterar instituição</title>
+    <body style="font-family:Arial; font-size:20px;">
+        <form action="update_inst" method="post"> 
+        <h5>Insira os novos dados da instituição</h5>
+        <div class="form-group">
+            <p><input class="form-control" type="hidden" name="nome_antigo" value="{{ params.get('nome') }}" placeholder="Nome"></p>
+        </div>
+        <div class="form-group">
+            <p>Novo nome: <input class="form-control" type="text" name="nome" value="{{ params.get('nome') }}" placeholder="Nome"></p>
+        </div>
+        <div class="form-group">
+            <p>Novo tipo: <input class="form-control" type="text" name="tipo" value="{{ params.get('tipo') }}" placeholder="Tipo"></p>
+
+        </div>
+        <div class="form-group">
+            <p>Novo concelho: <input class="form-control" type="number" name="num_concelho" value="{{ params.get('num_concelho') }}" placeholder="Número"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova região: <input class="form-control" type="number" name="num_regiao" value="{{ params.get('num_regiao') }}" placeholder="Número"></p>
+        </div>
+        <div class="form-group">
+            <p><input type="submit" value="Submit"></p>
+        </div>
+        </form>
+    </body>
+</doctype>

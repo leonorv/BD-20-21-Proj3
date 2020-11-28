@@ -9,6 +9,8 @@
                     <th>Tipo</th>
                     <th>Número da região</th>
                     <th>Número do concelho</th>
+                    <th>Alterar</th>
+                    <th>Remover</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +20,8 @@
                         <td>{{ record[1] }}</td>
                         <td>{{ record[2] }}</td>
                         <td>{{ record[3] }}</td>
+                        <td><a href="alterar_inst?nome={{ record[0] }}&tipo={{ record[1] }}&num_concelho={{ record[2] }}&num_regiao={{ record[3] }}">Alterar</a></td>
+                        <td><a href="remover_inst?nome={{ record[0] }}">Remover</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
