@@ -126,7 +126,7 @@ def inserir_analise():
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
     query1 = "insert into analise (num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst) values(%s, %s, %s, %s, %s, %s, %s, %s, %s);" 
-    query2 = "select max(num_analise) FROM analise;"
+    query2 = "select max(num_analise) from analise;"
     last_num_analise = cursor.execute(query2);
     data = (last_num_analise+1, request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"])
     cursor.execute(query1, data)
@@ -213,10 +213,12 @@ def inserir_medico():
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "insert into medico (num_cedula, nome, especialidade) values(%s %s, %s);" 
-    data = (last_num_cedula, request.form["nome"], request.form["especialidade"])
+    query1 = "insert into medico (num_cedula, nome, especialidade) values(%s %s, %s);" 
+    query2 = "select max(num_analise) from analise;"
+    last_num_analise = cursor.execute(query2)
+    data = (last_num_cedula+1, request.form["nome"], request.form["especialidade"])
+    cursor.execute(query1, data)
     last_num_cedula += 1
-    cursor.execute(query, data)
     return query
   except Exception as e:
     return str(e) #Renders a page with the error.
