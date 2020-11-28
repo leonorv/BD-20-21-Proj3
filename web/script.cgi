@@ -8,32 +8,12 @@ from flask import render_template, request
 import psycopg2
 import psycopg2.extras
 
-try: 
-  dbConn = psycopg2.connect(DB_CONNECTION_STRING)
-  cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-  
-  try:
-    last_num_analise = cursor.execute("SELECT max(num_analise) FROM analise;")+1
-  except:
-    last_num_analise = 0
-  try:
-    last_num_cedula = cursor.execute("SELECT max(num_cedula) FROM medico;")+1
-  except:
-    last_num_cedula = 0
-  try:
-    last_num_venda = cursor.execute("SELECT max(num_venda) FROM analise;")+1
-  except:
-    last_num_venda = 0
-except Exception as e:
-  str(e)
-
-
 script = Flask(__name__)
 
 DB_HOST="db.tecnico.ulisboa.pt"
-DB_USER="ist192557"
+DB_USER="ist192509"
 DB_DATABASE=DB_USER
-DB_PASSWORD="vgvo0215"
+DB_PASSWORD="dqav4036"
 DB_CONNECTION_STRING = "host=%s dbname=%s user=%s password=%s" %(DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD)
 
 @script.route('/')
@@ -145,10 +125,11 @@ def inserir_analise():
   try:
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
-    query = "insert into analise (num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst) values(%s, %s, %s, %s, %s, %s, %s, %s, %s);" 
-    data = (last_num_analise, request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"])
-    last_num_analise += 1
-    cursor.execute(query, data)
+    query1 = "insert into analise (num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst) values(%s, %s, %s, %s, %s, %s, %s, %s, %s);" 
+    query2 = "SELECT max(num_analise) FROM analise;"
+    last_num_analise = cursor.execute(query2);
+    data = (last_num_analise+1, request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"])
+    cursor.execute(query1, data)
     return query
   except Exception as e:
     return str(e) #Renders a page with the error.
