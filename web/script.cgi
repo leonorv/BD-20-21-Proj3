@@ -78,7 +78,7 @@ def update_inst():
     dbConn.close()
 
 @script.route('/list_inst')
-def listar():
+def listar_inst():
   dbConn=None
   cursor=None
   try:
@@ -157,6 +157,21 @@ def inserir_analise():
     cursor.close()
     dbConn.close()
 
+@script.route('/list_analises')
+def listar_analises():
+  dbConn=None
+  cursor=None
+  try:
+    dbConn = psycopg2.connect(DB_CONNECTION_STRING)
+    cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+    query = "SELECT * FROM analise;"
+    cursor.execute(query)
+    return render_template("listar_analises.html", cursor=cursor)
+  except Exception as e:
+    return str(e) #Renders a page with the error.
+  finally:
+    cursor.close()
+    dbConn.close()
 
 @script.route('/alterar_analise')
 def alterar_dados_analise():
@@ -300,7 +315,7 @@ def preencher_dados_prescricao():
     return str(e)
 
 @script.route('/insert_prescricao', methods=["POST"])
-def inserir_inst():
+def inserir_prescricao():
   dbConn=None
   cursor=None
   try:
@@ -318,7 +333,7 @@ def inserir_inst():
     dbConn.close()
 
 @script.route('/alterar_prescricao')
-def alterar_dados_inst():
+def alterar_dados_prescricao():
   try:
     return render_template("alterar_prescricao.html", params=request.args)
   except Exception as e:
