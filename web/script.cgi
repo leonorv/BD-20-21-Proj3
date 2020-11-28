@@ -24,16 +24,21 @@ def inicio():
     return str(e)
 
 @script.route('/data_inst')
-def preencher_dados():
+def preencher_dados_inst():
   try:
     return render_template("instituicao.html")
   except Exception as e:
     return str(e)
 
 @script.route('/alterar_inst')
-def alterar_dados():
+def alterar_dados_inst():
   try:
     return render_template("alterar_inst.html", params=request.args)
+
+@script.route('/data_analise')
+def preencher_dados_analise():
+  try:
+    return render_template("analise.html")
   except Exception as e:
     return str(e)
 
@@ -57,7 +62,7 @@ def update_balance():
     dbConn.close()
 
 @script.route('/insert_inst', methods=["POST"])
-def inserir():
+def inserir_inst():
   dbConn=None
   cursor=None
   try:
@@ -75,7 +80,7 @@ def inserir():
     dbConn.close()
 
 @script.route('/remover_inst')
-def remove():
+def remover_inst():
   dbConn=None
   cursor=None
   try:
@@ -83,6 +88,25 @@ def remove():
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
     query = "delete from instituicao where nome=%s;"
     data = (request.args["nome"],)
+    cursor.execute(query, data)
+    return query
+  except Exception as e:
+    return str(e) #Renders a page with the error.
+  finally:
+    dbConn.commit()
+    cursor.close()
+    dbConn.close()
+
+
+@script.route('/insert_analise', methods=["POST"])
+def inserir_analise():
+  dbConn=None
+  cursor=None
+  try:
+    dbConn = psycopg2.connect(DB_CONNECTION_STRING)
+    cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+    query = "insert into analise (num_analise, especialidade, num_cedula, num_doente, dia_hora, data_registo, nome, quant, inst) values(%s, %s, %s, %s, %s, %s, %s, %s, %s);" 
+    data = (request.form["num_analise"], request.form["especialidade"], request.form["num_cedula"], request.form["num_doente"], request.form["dia_hora"], request.form["data_registo"], request.form["nome"], request.form["quant"], request.form["inst"])
     cursor.execute(query, data)
     return query
   except Exception as e:
