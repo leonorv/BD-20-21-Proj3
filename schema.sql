@@ -10,7 +10,7 @@ drop table if exists PrescricaoVenda cascade;
 drop table if exists Analise cascade;
 
 create table Regiao(
-    num_regiao integer not null unique,
+    num_regiao integer not null unique
     nome char(50) not null unique check(nome in ('Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve')),
     num_habitantes integer not null check(num_habitantes > 0),
     primary key(num_regiao)

@@ -1,0 +1,20 @@
+<doctype html>
+    <title>Alterar médico</title>
+    <body style="font-family:Arial; font-size:20px;">
+        <form action="update_medico" method="post"> 
+        <h5>Insira os novos dados do médico</h5>
+        <div class="form-group">
+            <p><input class="form-control" type="hidden" name="num_cedula" value="{{ params.get('num_cedula') }}" placeholder="Número de Cédula"></p>
+        </div>
+        <div class="form-group">
+            <p>Novo nome: <input class="form-control" type="text" name="nome" value="{{ params.get('nome') }}" placeholder="Nome"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova especialidade: <input class="form-control" type="text" name="especialidade" value="{{ params.get('especialidade') }}" placeholder="Especialidade"></p>
+        </div>
+        <div class="form-group">
+            <p><input type="submit" value="Submit"></p>
+        </div>
+        </form>
+    </body>
+</doctype>

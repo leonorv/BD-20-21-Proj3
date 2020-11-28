@@ -1,0 +1,44 @@
+<doctype html>
+    <title>Lista de análises</title>
+    <body style="font-family:Arial; font-size:20px;">
+        {% if cursor %}
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Número da análise</th>
+                        <th>Especialidade</th>
+                        <th>Número da cédula</th>
+                        <th>Número do doente</th>
+                        <th>Data da consulta</th>
+                        <th>Data do registo</th>
+                        <th>Nome da análise</th>
+                        <th>Quantidade</th>
+                        <th>Nome da Instituição</th>
+                        <th>Alterar</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in cursor %}
+                        <tr>
+                            <td>{{ record[0] }}</td>
+                            <td>{{ record[1] }}</td>
+                            <td>{{ record[2] }}</td>
+                            <td>{{ record[3] }}</td>
+                            <td>{{ record[4] }}</td>
+                            <td>{{ record[5] }}</td>
+                            <td>{{ record[6] }}</td>
+                            <td>{{ record[7] }}</td>
+                            <td>{{ record[8] }}</td>
+                            <td><a href="alterar_analise?num_analise={{ record[0] }}&especialidade={{ record[1] }}&num_cedula={{ record[2] }}&num_doente={{ record[3] }}
+                                &dia_hora={{ record[4] }}&data_registo={{ record[5] }}&nome={{ record[6] }}&quant={{ record[7] }}&inst={{ record[8] }}">Alterar</a></td>
+                            <td><a href="remover_analise?num_analise={{ record[0] }}">Remover</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> Erro: ao obter dados da base de dados!</p>
+        {% endif %}
+    </body>
+    </doctype>

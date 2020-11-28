@@ -1,0 +1,31 @@
+<doctype html>
+    <title>Lista de Médicos</title>
+    <body style="font-family:Arial; font-size:20px;">
+        {% if cursor %}
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Número de cédula</th>
+                        <th>Nome</th>
+                        <th>Especialidade</th>
+                        <th>Alterar</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in cursor %}
+                        <tr>
+                            <td>{{ record[0] }}</td>
+                            <td>{{ record[1] }}</td>
+                            <td>{{ record[2] }}</td>
+                            <td><a href="alterar_medico?num_cedula={{ record[0] }}&nome={{ record[1] }}&especialidade={{ record[2] }}">Alterar</a></td>
+                            <td><a href="remover_medico?num_cedula={{ record[0] }}">Remover</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> Erro: ao obter dados da base de dados!</p>
+        {% endif %}
+    </body>
+    </doctype>

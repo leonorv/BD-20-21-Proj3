@@ -1,11 +1,8 @@
 <doctype html>
     <title>Inserir análise</title>
     <body style="font-family:Arial; font-size:20px;">
-        <form action="insertAnalise" method="post"> 
+        <form action="insert_analise" method="post"> 
         <h5>Preencha os dados da análise</h5>
-        <div class="form-group">
-            <p><input class="form-control" type="text" name="num_analise" placeholder="Número da Análise"></p>
-        </div>
         <div class="form-group">
             <p><input class="form-control" type="text" name="especialidade" placeholder="Especialidade"></p>
         </div>
@@ -16,10 +13,10 @@
             <p><input class="form-control" type="number" name="num_doente" placeholder="Número do doente"></p>
         </div>
         <div class="form-group">
-            <p><input class="form-control" type="date" name="dia_hora" placeholder="Data da consulta"></p>
+            <p><input class="form-control" type="datetime-local" step="1" name="dia_hora" placeholder="Data da consulta"></p>
         </div>
         <div class="form-group">
-            <p><input class="form-control" type="date" name="data_registo" placeholder="Data de registo"></p>
+            <p><input class="form-control" type="datetime-local" step="1" name="data_registo" placeholder="Data de registo"></p>
         </div>
         <div class="form-group">
             <p><input class="form-control" type="text" name="nome" placeholder="Nome da análise"></p>
@@ -35,4 +32,4 @@
         </div>
         </form>
     </body>
-    </doctype>
+</doctype>

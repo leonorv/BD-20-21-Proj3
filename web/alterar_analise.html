@@ -1,0 +1,38 @@
+<doctype html>
+    <title>Alterar Análise</title>
+    <body style="font-family:Arial; font-size:20px;">
+        <form action="update_analise" method="post"> 
+        <h5>Insira os novos dados da análise</h5>
+        <div class="form-group">
+            <p><input class="form-control" type="hidden" name="num_analise" value="{{ params.get('num_analise') }}" placeholder="Número da análise"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova especialidade: <input class="form-control" type="text" name="especialidade" value="{{ params.get('especialidade') }}" placeholder="Especialidade"></p>
+        </div>
+        <div class="form-group">
+            <p>Novo médico: <input class="form-control" type="number" name="num_cedula" value="{{ params.get('num_cedula') }}" placeholder="Número da cédula"></p>
+        </div>
+        <div class="form-group">
+            <p>Novo doente: <input class="form-control" type="number" name="num_doente" value="{{ params.get('num_doente') }}" placeholder="Número do doente"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova data da consulta: <input class="form-control" type="datetime-local" step="1" name="dia_hora" value="{{ params.get('dia_hora') }}" placeholder="Data da consulta"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova data de registo: <input class="form-control" type="datetime-local" step="1" name="data_registo" value="{{ params.get('data_registo') }}" placeholder="Data do registo"></p>
+        </div>
+        <div class="form-group">
+            <p>Novo nome da análise: <input class="form-control" type="text" name="nome" value="{{ params.get('nome') }}" placeholder="Nome da análise"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova Quantidade: <input class="form-control" type="number" name="quant" value="{{ params.get('quant') }}" placeholder="Quantidade" min="0"></p>
+        </div>
+        <div class="form-group">
+            <p>Nova Instituição: <input class="form-control" type="text" name="inst" value="{{ params.get('inst') }}" placeholder="Nome da instituição"></p>
+        </div>
+        <div class="form-group">
+            <p><input type="submit" value="Submit"></p>
+        </div>
+        </form>
+    </body>
+</doctype>
