@@ -214,11 +214,12 @@ def inserir_medico():
     dbConn = psycopg2.connect(DB_CONNECTION_STRING)
     cursor = dbConn.cursor(cursor_factory = psycopg2.extras.DictCursor)
     query1 = "insert into medico (num_cedula, nome, especialidade) values(%s %s, %s);" 
-    query2 = "select max(num_analise) from analise;"
-    last_num_analise = cursor.execute(query2)
+    query2 = "select max(num_cedula) from medico;"
+    cursor.execute(query2)
+    records = cursor.fetchall()
+    last_num_cedula = records[0][0]
     data = (last_num_cedula+1, request.form["nome"], request.form["especialidade"])
     cursor.execute(query1, data)
-    last_num_cedula += 1
     return query
   except Exception as e:
     return str(e) #Renders a page with the error.
