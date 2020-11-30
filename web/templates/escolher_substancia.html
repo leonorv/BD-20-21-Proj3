@@ -1,0 +1,39 @@
+<doctype html>
+    <title>Escolher médico e mês</title>
+    <body style="font-family:Arial; font-size:20px;">
+        {% if cursor %}
+            <form action="listar_substancias" method="post"> 
+            <div class="form-group">
+                <p><input class="form-control" type="month" name="mes" placeholder="Mês"></p>
+            </div>
+            <div>
+                <table border="2px">
+                    <thead>
+                        <tr>
+                            <th>Número de cédula</th>
+                            <th>Nome</th>
+                            <th>Especialidade</th>
+                            <th>Escolher</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in cursor %}
+                            <tr>
+                                <td>{{ record[0] }}</td>
+                                <td>{{ record[1] }}</td>
+                                <td>{{ record[2] }}</td>
+                                <td><input type="radius" name="num_cedula" value="{{ record[0] }}"></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+                <p><input type="submit" value="Submit"></p>
+            </div>
+            </form>
+        {% else %}
+            <p> Erro: ao obter dados da base de dados!</p>
+        {% endif %}
+    </body>
+    </doctype>

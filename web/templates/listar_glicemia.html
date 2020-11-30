@@ -1,0 +1,45 @@
+<doctype html>
+    <title>Lista de valores mais altos e baixos de glicémia por concelho</title>
+    <body style="font-family:Arial; font-size:20px;">
+        {% if cursor %}
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Concelho</th>
+                        <th>Número do doente</th>
+                        <th>Valor mais alto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in cursor[0] %}
+                        <tr>
+                            <td>{{ record[0] }}</td>
+                            <td>{{ record[1] }}</td>
+                            <td>{{ record[2] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Concelho</th>
+                        <th>Número do doente</th>
+                        <th>Valor mais baixo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in cursor[1] %}
+                        <tr>
+                            <td>{{ record[0] }}</td>
+                            <td>{{ record[1] }}</td>
+                            <td>{{ record[2] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> Erro: ao obter dados da base de dados!</p>
+        {% endif %}
+    </body>
+    </doctype>
