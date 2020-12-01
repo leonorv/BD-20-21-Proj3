@@ -95,7 +95,7 @@ create table PrescricaoVenda(
     num_doente integer not null,
     dia_hora timestamp not null,
     substancia char(50) not null,
-    num_venda integer not null,
+    num_venda integer not null unique,
     foreign key(num_venda) references VendaFarmacia(num_venda) on delete cascade on update cascade,
     foreign key(num_cedula, num_doente, dia_hora, substancia) references Prescricao(num_cedula, num_doente, dia_hora, substancia) on delete cascade on update cascade, 
     primary key(num_cedula, num_doente, dia_hora, substancia, num_venda) 
