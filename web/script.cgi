@@ -507,10 +507,4 @@ def listar_glicemia():
     return str(e)
 
 
-
-
-
-
-
-
 CGIHandler().run(script)
