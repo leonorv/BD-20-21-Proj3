@@ -492,4 +492,3 @@ insert into prescricaoVenda values(9, 1, '2020-11-27 15:11:18', 'paracetamol', 9
 insert into prescricaoVenda values(9, 2, '2020-11-30 12:06:05', 'zyrtec', 10);
 insert into prescricaoVenda values(10, 5, '2020-11-30 14:15:00', 'zyrtec', 11);
 insert into prescricaoVenda values(11, 7, '2020-12-02 12:12:12', 'xanax', 12);
-insert into prescricaoVenda values(11, 11, '2020-12-03 12:12:12', 'xanax', 12);

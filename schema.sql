@@ -8,8 +8,6 @@ drop table if exists Prescricao cascade;
 drop table if exists VendaFarmacia cascade;
 drop table if exists PrescricaoVenda cascade;
 drop table if exists Analise cascade;
-drop function if exists getEspecialidade(integer) cascade;
-drop function if exists getNConsultas(timestamp, char(50), integer);
 
 create table Regiao(
     num_regiao integer not null unique,
@@ -37,17 +35,6 @@ create table Instituicao(
 );
 
 
-/*extensão procedimental para a restrição de integridade RI-100*/
-create or replace function getNConsultas (dh timestamp, ni char(50), nc integer)
-returns integer as $nConsultas$
-declare
-	nConsultas integer;
-begin
-   select count(c.num_cedula) into nConsultas from Consulta as c where extract(year from c.dia_hora) = extract(year from dh) and extract(week from c.dia_hora) = extract(week from dh) and ni = c.nome_instituicao and nc = c.num_cedula;
-   return nConsultas;
-end;
-$nConsultas$ language plpgsql;
-
 create table Medico(
     num_cedula integer not null unique,
     nome char(50) not null, 
@@ -63,8 +50,7 @@ create table Consulta(
     foreign key(num_cedula) references Medico(num_cedula) on delete cascade on update cascade,
     foreign key(nome_instituicao) references Instituicao(nome) on delete cascade on update cascade,
     primary key(num_cedula, num_doente, dia_hora),
-    constraint RI_consulta_2 unique(num_doente, dia_hora, nome_instituicao),
-    constraint RI_100 check(getNConsultas(dia_hora, nome_instituicao, num_cedula) < 1)
+    constraint RI_consulta_2 unique(num_doente, dia_hora, nome_instituicao)
 );
 
 create table Prescricao(
@@ -80,14 +66,13 @@ create table Prescricao(
 
 
 create table VendaFarmacia(
-    num_venda integer not null unique, 
+    num_venda integer primary key, 
     inst char(50) not null,
     data_registo timestamp not null,
     substancia char(50) not null,
     quant integer not null check(quant > 0),
     preco decimal(6,2) not null check(preco > 0), 
-    foreign key(inst) references Instituicao(nome) on delete cascade on update cascade,
-    primary key(num_venda)
+    foreign key(inst) references Instituicao(nome) on delete cascade on update cascade
 );
 
 create table PrescricaoVenda(
@@ -102,17 +87,6 @@ create table PrescricaoVenda(
 );
 
 
-/*extensão procedimental para a restrição de integridade da analise*/
-create or replace function getEspecialidade (nc integer)
-returns char(50) as $especialidade$
-declare
-	especialidade char(50);
-begin
-   select m.especialidade into especialidade from Medico as m where m.num_cedula = nc;
-   return especialidade;
-end;
-$especialidade$ language plpgsql;
-
 create table Analise(
     num_analise integer not null,
     especialidade char(50) not null, 
@@ -125,6 +99,5 @@ create table Analise(
     inst char(50) not null,
     foreign key(num_cedula, num_doente, dia_hora) references Consulta(num_cedula, num_doente, dia_hora),
     foreign key(inst) references Instituicao(nome) on delete cascade on update cascade,
-    primary key(num_analise),
-    constraint RI_analise check((num_cedula is null and num_doente is null and dia_hora is null) or getEspecialidade(num_cedula) = especialidade)
+    primary key(num_analise)
 );
